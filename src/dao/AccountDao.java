@@ -37,7 +37,8 @@ public class AccountDao {
                 try (ResultSet generatedKeys = pstmt.getGeneratedKeys()) {
                     if (generatedKeys.next()) {
                         int accountId = generatedKeys.getInt(1);
-                        System.out.println("Successfully added account with ID: " + accountId);
+                        System.out.println("\nSuccessfully Added Account");
+                        System.out.println("\nYour Account Number \t:" + accountNumber);
                         return accountId;
                     }
                 }
@@ -53,8 +54,6 @@ public class AccountDao {
         System.out.println("Something went wrong");
         return -1; // Return -1 to indicate an error
     }
-
-
 
 
     /**

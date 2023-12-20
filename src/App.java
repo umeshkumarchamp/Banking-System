@@ -22,7 +22,8 @@ public class App {
             do {
                 System.out.println(
                         "\n<============================  W E L C O M E     T O     A A P N A     B A N K  ============================>\n");
-                System.out.println("1. Add new Bank Account \t\t2. Show Customers List\t\t3. Search By Account Number \n0. Exist ");
+                System.out.println("1. Add new Bank Account \t\t2. Show Customers List\t\t3. Search By Account Number "+
+                "\n4. Deposit Money \t\t\t5. Credit Money \t\t6. Check Balance\n0. Exist ");
                 System.out.print("\nEnter Your Choice : ");
                 choice = sc.nextInt();
                 switch (choice) {
@@ -76,8 +77,14 @@ public class App {
                         long accountNumber = sc.nextLong();
                         sc.nextLine();
                         CustomerDao.searchByAccountNumber(conn,accountNumber);
-                        
                         break;
+                    case 4:
+                        System.out.println("\n<-------------- Deposit Money -------------->\n");
+                        System.out.print("Enter Your Account Number : ");
+                        accountNumber = sc.nextLong();
+                        sc.nextLine();
+                        System.out.println(accountNumber);
+                        break; 
                     case 0:
                         System.out.println("\n<-------------------- Thanks for visiting -------------------->\n");
                         System.exit(0);

@@ -1,6 +1,7 @@
 package dao;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -40,7 +41,7 @@ public class CustomerDao {
                 try (ResultSet generatedKeys = pstmt.getGeneratedKeys()) {
                     if (generatedKeys.next()) {
                         int customerId = generatedKeys.getInt(1);
-                        System.out.println("Customer Added Successfully with ID: " + customerId);
+                        // System.out.println("Customer Added Successfully with ID: " + customerId);
                         return customerId;
                     }
                 }
@@ -104,6 +105,7 @@ public class CustomerDao {
                 long accountNo = rs.getLong("account_number");
                 String accountType = rs.getString("account_type");
                 int balance = rs.getInt("balance");
+                Date date = rs.getDate("date");
                 System.out.println();
                 System.out.println("CustomerId \t: " + customerId);
                 System.out.println("Fullname \t: " + fullname);
@@ -113,6 +115,7 @@ public class CustomerDao {
                 System.out.println("AccountType \t: " + accountType);
                 System.out.println("AccountNumber \t: " + accountNo);
                 System.out.println("Balance \t: " + balance);
+                System.out.println("Created Date \t: " + date);
 
             }
         }catch(SQLException e){
