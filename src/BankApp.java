@@ -91,14 +91,14 @@ public class BankApp {
                         System.out.print("Enter Your Account Number : ");
                         accountNumber = sc.nextLong();
                         sc.nextLine();
-                        System.out.println(accountNumber);
+                        TransactionDao.creditMoney(conn,accountNumber);
                         break; 
                     case 6:
                         System.out.println("\n<-------------- Check Balance -------------->\n");
                         System.out.print("Enter Your Account Number : ");
                         accountNumber = sc.nextLong();
                         sc.nextLine();
-                        System.out.println(accountNumber);
+                        TransactionDao.checkBalance(conn,accountNumber);
                         break;
                     case 0:
                         System.out.println("\n<-------------------- Thanks for visiting -------------------->\n");
