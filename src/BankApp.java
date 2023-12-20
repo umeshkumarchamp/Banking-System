@@ -24,7 +24,7 @@ public class BankApp {
                 System.out.println(
                         "\n<============================  W E L C O M E     T O     A A P N A     B A N K  ============================>\n");
                 System.out.println("1. Add new Bank Account \t\t2. Show Customers List\t\t3. Search By Account Number "+
-                "\n4. Deposit Money \t\t\t5. Credit Money \t\t6. Check Balance\n0. Exist ");
+                "\n\n4. Deposit Money \t\t\t5. Credit Money \t\t6. Check Balance\n\n0. Exist ");
                 System.out.print("\nEnter Your Choice : ");
                 choice = sc.nextInt();
                 switch (choice) {
