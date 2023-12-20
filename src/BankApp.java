@@ -4,6 +4,7 @@ import java.util.Scanner;
 import config.DB;
 import dao.AccountDao;
 import dao.CustomerDao;
+import dao.TransactionDao;
 import model.Account;
 import model.Customer;
 
@@ -14,7 +15,7 @@ import model.Customer;
  * =====================================================================================================
  * | Status : Open
  */
-public class App {
+public class BankApp {
     public static void main(String[] args) throws Exception {
         int choice;
         Scanner sc = new Scanner(System.in);
@@ -83,8 +84,22 @@ public class App {
                         System.out.print("Enter Your Account Number : ");
                         accountNumber = sc.nextLong();
                         sc.nextLine();
+                        TransactionDao.depositMoney(conn,accountNumber);
+                        break;
+                    case 5:
+                        System.out.println("\n<-------------- Credit Money -------------->\n");
+                        System.out.print("Enter Your Account Number : ");
+                        accountNumber = sc.nextLong();
+                        sc.nextLine();
                         System.out.println(accountNumber);
                         break; 
+                    case 6:
+                        System.out.println("\n<-------------- Check Balance -------------->\n");
+                        System.out.print("Enter Your Account Number : ");
+                        accountNumber = sc.nextLong();
+                        sc.nextLine();
+                        System.out.println(accountNumber);
+                        break;
                     case 0:
                         System.out.println("\n<-------------------- Thanks for visiting -------------------->\n");
                         System.exit(0);

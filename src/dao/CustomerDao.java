@@ -117,6 +117,8 @@ public class CustomerDao {
                 System.out.println("Balance \t: " + balance);
                 System.out.println("Created Date \t: " + date);
 
+            }else{
+                System.out.println("\nAccount Not Found ! ");
             }
         }catch(SQLException e){
             e.printStackTrace();
